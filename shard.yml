@@ -1,0 +1,9 @@
+name: flawless_state
+version: 0.1.0
+
+authors:
+  - Jason Landry <jasonl99@gmail.com>
+
+crystal: 0.20.3
+
+license: MIT
