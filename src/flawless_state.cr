@@ -39,9 +39,17 @@ module FlawlessState
       defined_states[state].none?
     end
 
+    def is?( state : Symbol)
+      current_state == state
+    end
+
+    def is_not?( state : Symbol)
+      current_state != state
+    end
+
+
     # if a transition is permitted, make it, otherwise raise an exception
     def transition_to( new_state : Symbol)
-      puts "Current state: #{current_state}, new_state: #{new_state}"
       unless @state_pairs.index( {current_state, new_state})
         Exception.new "Transition from #{current_state} to #{new_state} is not permitted.", self
       else
