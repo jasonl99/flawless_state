@@ -9,8 +9,8 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   flawless_state:
-      github: jasonl99/flawless_state
-      ```
+    github: jasonl99/flawless_state
+```
 
 ## Usage
 
