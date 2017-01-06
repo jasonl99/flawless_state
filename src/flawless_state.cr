@@ -1,11 +1,7 @@
 require "./flawless_state/*"
 
 module FlawlessState
-  class Exception < Exception
-    @error_text : String
-    def initialize(@error_text, state)
-      raise @error_text
-    end
+  class FlawlessState::Exception < Exception
   end
 
 
@@ -51,7 +47,7 @@ module FlawlessState
     # if a transition is permitted, make it, otherwise raise an exception
     def transition_to( new_state : Symbol)
       unless @state_pairs.index( {current_state, new_state})
-        Exception.new "Transition from #{current_state} to #{new_state} is not permitted.", self
+        raise FlawlessState::Exception.new("Transition from #{current_state} to #{new_state} is not permitted.")
       else
         transition_to!(new_state)
       end
